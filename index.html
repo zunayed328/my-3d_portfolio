@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/src/assets/tech/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zunayed | AI Engineer</title>
+  </head>
+  <body>
+    <div id="root">Loading application...</div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Simple error overlay to help surface runtime errors when the app is blank.
+      function showOverlay(message) {
+        try {
+          var el = document.getElementById('app-error-overlay');
+          if (!el) {
+            el = document.createElement('div');
+            el.id = 'app-error-overlay';
+            Object.assign(el.style, {
+              position: 'fixed',
+              left: '12px',
+              right: '12px',
+              top: '12px',
+              padding: '12px',
+              background: 'rgba(0,0,0,0.85)',
+              color: '#fff',
+              fontFamily: 'monospace',
+              fontSize: '13px',
+              zIndex: 999999,
+              borderRadius: '6px',
+              maxHeight: '70vh',
+              overflow: 'auto',
+            });
+            document.body.appendChild(el);
+          }
+          el.textContent = message;
+        } catch (e) {
+          // ignore
+        }
+      }
+
+      window.addEventListener('error', function (e) {
+        showOverlay('Runtime Error: ' + (e && e.message) + '\nAt ' + (e && e.filename) + ':' + (e && e.lineno));
+        console.error(e.error || e.message || e);
+      });
+
+      window.addEventListener('unhandledrejection', function (ev) {
+        showOverlay('Unhandled Rejection: ' + (ev && ev.reason && ev.reason.message ? ev.reason.message : String(ev.reason)));
+        console.error(ev.reason);
+      });
+    </script>
+  </body>
+</html>
