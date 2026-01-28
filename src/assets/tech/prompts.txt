@@ -1,0 +1,21 @@
+
+AI Prompt (use this exact template):
+"A high-detail 3D render of the [LANGUAGE NAME] logo, micro-3D isometric style, made of glowing frosted glass and neon circuits, center-focused, soft ambient occlusion, high resolution, dark background, transparent PNG style, professional tech aesthetic."
+
+Replacements:
+- Python: Replace [LANGUAGE NAME] with "Python Snake"
+- Java: Replace [LANGUAGE NAME] with "Java Coffee Cup"
+- C/C++: Replace [LANGUAGE NAME] with "Blue C++ Shield"
+
+Usage notes:
+- Use 1:1 aspect ratio, high resolution (ideally 8k or maximum available), and export as PNG with transparent background.
+- Recommended modifiers: subtle volumetric fog, neon rim lighting (cyan / purple for Python, amber / blue for Java, cyan / royal blue for C++), glossy frosted glass material, crisp reflections, isometric camera angle, center composition.
+- Suggested generators: Midjourney, Stable Diffusion (img2img with depth/SDXL), or DALL·E. Add generator-specific quality flags as needed.
+
+Save outputs as `python.png`, `java.png`, `cpp.png` in either `public/icons/` (preferred) or `src/assets/tech/`.
+
+If you want, I can:
+- (A) Call an image-generation API for you (I will need your API key and permission). 
+- (B) Generate a small script you can run locally to batch-generate these images with Stable Diffusion (requires a local GPU).
+- (C) Provide step-by-step Midjourney instructions for the prompts.
+

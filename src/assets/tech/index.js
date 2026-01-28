@@ -29,6 +29,9 @@ import tesla from "./tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import python_placeholder from "./python_placeholder.svg";
+import java_placeholder from "./java_placeholder.svg";
+import cpp_placeholder from "./cpp_placeholder.svg";
 
 export {
   logo,
@@ -59,4 +62,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  python_placeholder,
+  java_placeholder,
+  cpp_placeholder,
 };

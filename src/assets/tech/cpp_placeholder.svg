@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="g3" x1="0" x2="1">
+      <stop offset="0" stop-color="#11998e"/>
+      <stop offset="1" stop-color="#38ef7d"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="64" fill="rgba(5,8,22,0.6)" />
+  <g transform="translate(160,160) scale(0.7)">
+    <path d="M320 40 L560 40 C640 40 700 100 700 180 L700 460 C700 540 640 600 560 600 L320 600 C240 600 180 540 180 460 L180 180 C180 100 240 40 320 40 Z" fill="url(#g3)" opacity="0.95"/>
+    <text x="420" y="360" font-family="Poppins, sans-serif" font-size="180" fill="#ffffff" text-anchor="middle" opacity="0.95">C++</text>
+  </g>
+</svg>

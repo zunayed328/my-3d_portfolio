@@ -15,47 +15,44 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
 } from "../assets";
 
+import {
+  RobotIcon,
+  CodeIcon,
+  BarChartIcon,
+  InfinityIcon,
+} from "../components/Icons";
+
 export const navLinks = [
   {
-    id: "about",
+    id: "/",
+    title: "Home",
+  },
+  {
+    id: "/about",
     title: "About",
   },
   {
-    id: "work",
-    title: "Work",
+    id: "/projects",
+    title: "Projects",
   },
   {
-    id: "contact",
+    id: "/research",
+    title: "Research",
+    dropdown: [
+      { id: "/research/current", title: "Current Research" },
+      { id: "/research/future", title: "Future Research" },
+    ],
+  },
+  {
+    id: "/blog",
+    title: "Blog",
+  },
+  {
+    id: "/contact",
     title: "Contact",
-  },
-];
-
-const services = [
-  {
-    title: "C / C++",
-    icon: web,
-  },
-  {
-    title: "React",
-    icon: mobile,
-  },
-  {
-    title: "Java / Python",
-    icon: backend,
-  },
-  {
-    title: "Machine Learning / Deep Learning",
-    icon: creator,
   },
 ];
 
@@ -116,123 +113,190 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    title: "AI/ML",
+    company_name: "Machine Learning",
+    icon: RobotIcon,
+    iconBg: "#ffffff",
+    date: "",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn",
+      "LLMs",
+      "Computer Vision",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    title: "Programming",
+    company_name: "Development",
+    icon: CodeIcon,
+    iconBg: "#ffffff",
+    date: "",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Python",
+      "TypeScript",
+      "C++",
+      "Java",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    title: "Data Science",
+    company_name: "Analytics",
+    icon: BarChartIcon,
+    iconBg: "#ffffff",
+    date: "",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Pandas",
+      "NumPy",
+      "Data Analysis",
+      "Data Visualization",
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    title: "Tools & Platforms",
+    company_name: "DevOps",
+    icon: InfinityIcon,
+    iconBg: "#ffffff",
+    date: "",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Docker",
+      "Git",
+      "AWS",
+      "Linux",
+      "MLOps",
     ],
   },
 ];
 
-const testimonials = [
+// My Projects - 15 Completed/Active Projects
+const myProjects = [
+  // 🌱 Beginner: Core Machine Learning & NLP
   {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    title: "Fake News Detector",
+    description: "Build an NLP model using TF-IDF and a Passive Aggressive Classifier to analyze the text of news articles and flag misleading or fabricated stories.",
+    tags: ["#NLP", "#TF-IDF", "#Python", "#Sklearn"],
+    category: "Beginner",
   },
   {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    title: "AI-Powered Study Planner",
+    description: "Create a tool that takes a student's exam dates and syllabus size, and uses basic ML to generate a dynamic daily study schedule that adjusts if the user falls behind.",
+    tags: ["#ML", "#Python", "#Scheduling"],
+    category: "Beginner",
   },
   {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    title: "Smart Budget Tracker",
+    description: "Use time-series analysis to categorize banking transactions and predict a user's expenses for the next month based on their past spending habits.",
+    tags: ["#Time-Series", "#Pandas", "#Finance"],
+    category: "Beginner",
+  },
+  {
+    title: "Spam & Phishing Classifier",
+    description: "Use Naive Bayes or Transformer models to detect spam or phishing attempts in emails by analyzing headers, links, and message metadata.",
+    tags: ["#NLP", "#Transformers", "#Security"],
+    category: "Beginner",
+  },
+  {
+    title: "Basic Emotion Detector",
+    description: "Use OpenCV and pre-trained models (like DeepFace) to analyze a webcam feed and detect if a person is happy, sad, angry, or surprised.",
+    tags: ["#OpenCV", "#DeepFace", "#Vision"],
+    category: "Beginner",
+  },
+  // 🚀 Intermediate: Computer Vision & Real-World Utility
+  {
+    title: "Sign Language Translator",
+    description: "Use a webcam to recognize American Sign Language (ASL) gestures in real-time and convert them into text or speech using Convolutional Neural Networks (CNNs).",
+    tags: ["#CNN", "#ASL", "#TensorFlow"],
+    category: "Intermediate",
+  },
+  {
+    title: "Plant Disease Identification",
+    description: "Help farmers by creating an AI that classifies plant diseases from photos of leaves. Use Transfer Learning (ResNet) and deploy it as a mobile app.",
+    tags: ["#Transfer Learning", "#ResNet", "#Mobile"],
+    category: "Intermediate",
+  },
+  {
+    title: "Automated Resume Screener",
+    description: "Develop an NLP pipeline using SpaCy to parse PDF resumes, extract key skills using Named Entity Recognition (NER), and score candidates against a job description.",
+    tags: ["#SpaCy", "#NER", "#NLP"],
+    category: "Intermediate",
+  },
+  {
+    title: "Smart Attendance System",
+    description: "Build a facial recognition system that takes a classroom snapshot and automatically marks attendance in a spreadsheet, identifying multiple faces at once.",
+    tags: ["#Face Recognition", "#OpenCV", "#Automation"],
+    category: "Intermediate",
+  },
+  {
+    title: "Garbage Segregation AI",
+    description: "Create a model that identifies waste from an image and classifies it as biodegradable, recyclable, or hazardous. Integrated with Raspberry Pi smart dustbin.",
+    tags: ["#Image Classification", "#Raspberry Pi", "#IoT"],
+    category: "Intermediate",
+  },
+  // 🔥 Advanced: Deep Learning, AI Agents & Generative AI
+  {
+    title: "RAG-Based PDF Tutor",
+    description: "Build an app where users upload complex textbooks. Using Llama 3 and RAG, the AI acts as a tutor that answers questions based only on the uploaded text.",
+    tags: ["#LLM", "#RAG", "#Llama 3"],
+    category: "Advanced",
+  },
+  {
+    title: "Deepfake Video Detector",
+    description: "Train a complex deep learning model to analyze facial micro-expressions and video artifacts to determine if a video has been manipulated by AI.",
+    tags: ["#Deep Learning", "#Forensics", "#Video AI"],
+    category: "Advanced",
+  },
+  {
+    title: "AI Career Counselor Agent",
+    description: "Build an autonomous AI agent that takes a student's interests and skills, scrapes job market data, and generates a personalized career roadmap.",
+    tags: ["#AI Agents", "#Web Scraping", "#LangChain"],
+    category: "Advanced",
+  },
+  {
+    title: "Autonomous Drone Navigation",
+    description: "Use Reinforcement Learning and Computer Vision to train a simulated drone (using ROS or AirSim) to navigate through an obstacle course without human intervention.",
+    tags: ["#Reinforcement Learning", "#ROS", "#Robotics"],
+    category: "Advanced",
+  },
+  {
+    title: "Virtual Try-On (GANs)",
+    description: "Use Generative Adversarial Networks (GANs) to allow users to upload a photo of themselves and 'try on' different outfits dynamically for e-commerce.",
+    tags: ["#GANs", "#GenAI", "#Fashion Tech"],
+    category: "Advanced",
   },
 ];
 
-const projects = [
+// Future Projects - Tech Stacks I'm Exploring
+const futureProjects = [
   {
-    name: "AI Powered Heart Disease Prediction",
-    description:
-      "A machine learning system that predicts heart disease risk using clinical data and ML models to assist medical decision-making.",
-    tags: [
-      { name: "machine-learning", color: "blue-text-gradient" },
-      { name: "python", color: "green-text-gradient" },
-      { name: "pandas", color: "pink-text-gradient" },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/zunayed328",
+    title: "Agent Frameworks",
+    description: "Building autonomous systems using modern orchestration libraries.",
+    tags: ["#LangChain", "#LangGraph", "#CrewAI", "#Pydantic AI"],
   },
   {
-    name: "AI Powered Career Guide System",
-    description:
-      "An AI-driven career guidance tool that suggests career paths and learning resources based on user profiles and predicted job trends.",
-    tags: [
-      { name: "nlp", color: "blue-text-gradient" },
-      { name: "ml", color: "green-text-gradient" },
-      { name: "react", color: "pink-text-gradient" },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/zunayed328",
+    title: "Agent Development",
+    description: "Designing agentic workflows and voice-enabled assistants.",
+    tags: ["#AutoGen", "#Agentic Workflow", "#AgentOps", "#Voice Agents"],
   },
   {
-    name: "Bank Management System",
-    description:
-      "A full-stack bank management system to manage accounts, transactions, and reports with proper security and validation.",
-    tags: [
-      { name: "java", color: "blue-text-gradient" },
-      { name: "sql", color: "green-text-gradient" },
-      { name: "spring", color: "pink-text-gradient" },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/zunayed328",
+    title: "ML & Deep Learning",
+    description: "Developing robust models for computer vision and NLP.",
+    tags: ["#Machine Learning", "#Deep Learning", "#NLP", "#Computer Vision"],
+  },
+  {
+    title: "AI Infrastructure",
+    description: "Scalable deployment and vector search systems.",
+    tags: ["#MLOps", "#RAG Systems", "#Vector DBs", "#Docker"],
+  },
+  {
+    title: "Monitoring",
+    description: "Observability and tracking for LLM applications.",
+    tags: ["#Langfuse", "#Prometheus", "#OpenTelemetry"],
+  },
+  {
+    title: "Integrations",
+    description: "Connecting AI agents to external tools and APIs.",
+    tags: ["#API Integration", "#Tool Calling", "#Automation"],
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { technologies, experiences, myProjects, futureProjects };

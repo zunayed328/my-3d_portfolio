@@ -18,27 +18,27 @@ const Computers = ({ isMobile }) => {
         position={[-20, 50, 10]}
         angle={0.12}
         penumbra={1}
-        intensity={10} 
+        intensity={10}
         castShadow
         shadow-mapSize={1024}
       />
-      
+
       {/* 3. GENERAL FILL LIGHT (Intensity up from 1 to 5) */}
       <pointLight intensity={5} />
 
       {/* 4. RGB FAN GLOW EFFECT (New Addition for colorful light) */}
-      <pointLight 
-        intensity={15} 
+      <pointLight
+        intensity={15}
         position={[-2.5, -1.5, -1.5]} // Positioned near the PC case fans
         color="#915EFF" // Purple color for the glow
         distance={10}
       />
-      
+
       {/* 5. SCREEN REFLECTION GLOW (Blue Light) */}
-      <pointLight 
-        intensity={2} 
+      <pointLight
+        intensity={2}
         position={[0, 0.5, 0]} // Positioned near the monitor area
-        color="#61dafb" 
+        color="#61dafb"
         distance={5}
       />
 
@@ -83,10 +83,12 @@ const ComputersCanvas = () => {
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
+      style={{ touchAction: 'pan-y' }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
+          enablePan={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
